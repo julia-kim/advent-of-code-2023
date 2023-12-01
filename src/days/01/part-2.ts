@@ -37,24 +37,32 @@ export function part2(input?: string[]) {
                 indexOccurence = line.indexOf(numberStrings[i], indexOccurence + 1);
             }
             const firstFound = Math.min(...startingIndices)
-            const lastFound = Math.max(...startingIndices)
             if (firstFound < lowest) {
                 lowest = firstFound;
                 firstString = numberStrings[i];
             }
-            const lastIndex = lastFound + numberStrings[i].length - 1
-            if (lastIndex >= highest) {
-                highest = lastFound;
-                lastString = numberStrings[i];
-            }
-            if (lastFound > highest) {
-                highest = lastFound;
-                lastString = numberStrings[i];
-            }
 
+            for (var j = 0; j < startingIndices.length; j++) {
+                const lastFound = startingIndices[j]
+                const lastI = lastFound + numberStrings[i].length - 1
+                if (numberMap.get(lastString) < numberMap.get(numberStrings[i]) && lastFound > highest) {
+                    highest = lastFound;
+                    lastString = numberStrings[i];
+                }
+                if (highest > 0) {
+                    const lastIndex = highest + lastString.length - 1
+                    if (lastIndex < line.length && lastIndex >= lastFound) {
+                        continue;
+                    }
+                }
+                if (lastFound > highest) {
+                    highest = lastFound;
+                    lastString = numberStrings[i];
+                }
+            }
         }
         return +(numberMap.get(firstString) + numberMap.get(lastString));
     });
-    console.log(calibrationValues.at(972))
+    console.log(calibrationValues)
     return calibrationValues.reduce((partialSum, x) => partialSum + x, 0);
 }
