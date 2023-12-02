@@ -43,7 +43,7 @@ export function part2(input?: string[]) {
             }
 
             for (var j = 0; j < startingIndices.length; j++) {
-                startingIndex = startingIndices[j]
+                startingIndex = startingIndices[j];
                 if (map.get(lastDigit) < map.get(numbers[i]) && startingIndex > lastDigitIndex) {
                     lastDigitIndex = startingIndex;
                     lastDigit = numbers[i];
