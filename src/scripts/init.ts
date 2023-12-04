@@ -20,9 +20,8 @@ if (existsSync(`src/days/${day}`)) {
   process.exit(0);
 }
 const newDayPath = `${basePath}/${day}`;
+const templatePath = `${__dirname}/template`;
 mkdirSync(newDayPath);
-const path = require('path');
-const templatePath = path.join(__dirname, '..', 'template');
 copyFileSync(`${templatePath}/dayXX.ts.tpl`, `${newDayPath}/day${day}.ts`);
 copyFileSync(`${templatePath}/part1.ts.tpl`, `${newDayPath}/part1.ts`);
 copyFileSync(`${templatePath}/part2.ts.tpl`, `${newDayPath}/part2.ts`);
