@@ -20,6 +20,7 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "init-day": "npx ts-node src/scripts/init.ts"
   }
 }
