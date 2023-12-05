@@ -4,7 +4,7 @@
 [![Language](https://img.shields.io/badge/Language-TypeScript-ff69b4?style=for-the-badge)](https://kotlinlang.org/)
 [![Days completed](https://img.shields.io/badge/Days%20Completed-4-red?style=for-the-badge)](https://github.com/julia-kim/advent-of-code-2023/tree/main/src/main/kotlin/days)
 [![Stars](https://img.shields.io/badge/Stars%20⭐%20-9-yellow?style=for-the-badge)](https://github.com/julia-kim/advent-of-code-2023/tree/main/src/main/kotlin/days)
-[![License: Apache-2.0](https://img.shields.io/github/license/julia-kim/advent-of-code-2023?style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License: MIT](https://img.shields.io/github/license/julia-kim/advent-of-code-2023?style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 generate templates: `npm run init-day {day}`  
 solve day: `npm run start {day}`  
