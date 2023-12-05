@@ -25,7 +25,6 @@ export function part2(input?: string[]) {
     var match = [...row].forEach((c, x) => {
       if (c == '*') {
         let touchingParts = new Set<string>();
-        const point = new Point(x, -y);
         const directions = [
           [-1, 0],
           [1, 0],
@@ -43,7 +42,6 @@ export function part2(input?: string[]) {
           }
         });
         if (touchingParts.size == 2) {
-          console.log(touchingParts);
           partNumbers.push(
             +[...touchingParts][0].split('+')[0] *
               +[...touchingParts][1].split('+')[0]
@@ -52,6 +50,5 @@ export function part2(input?: string[]) {
       }
     });
   });
-  console.log(partNumbers);
   return sum(partNumbers);
 }
