@@ -1,22 +1,31 @@
 import chalk from 'chalk';
-import { day01 } from './days/01/day01';
-import { day03 } from './days/03/day03';
-import { day04 } from './days/04/day04';
 
 const BORDER_TOP = '╔═══════════════════════════════════════════════════════════╗';
 const BORDER_BTM = '╚═══════════════════════════════════════════════════════════╝';
 const title = `${chalk.greenBright('Advent')} of ${chalk.redBright('Code')} 2023`;
 const header = `║                 🎄 ${title} 🎄                 ║`;
-console.log('');
-console.log(BORDER_TOP);
-console.log(header);
-console.log(BORDER_BTM);
 
-console.log(BORDER_TOP);
-console.log('');
+const args = process.argv.slice(2);
+const day = args[0];
+if (!day) {
+  console.error('No day specified run with npm run dev {day}');
+  process.exit(1);
+}
 
-day04();
+async function main() {
+  console.log('');
+  console.log(BORDER_TOP);
+  console.log(header);
+  console.log(BORDER_BTM);
+  console.log(BORDER_TOP);
+  console.log('');
 
-console.log('');
-console.log(BORDER_BTM);
-console.log('');
+  const { default: puzzle } = await import(`./days/${day}/day${day}.js`);
+  puzzle();
+
+  console.log('');
+  console.log(BORDER_BTM);
+  console.log('');
+}
+
+main();
