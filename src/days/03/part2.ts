@@ -43,7 +43,6 @@ export function part2(input?: string[]) {
           }
         });
         if (touchingParts.size == 2) {
-          console.log(touchingParts);
           partNumbers.push(
             +[...touchingParts][0].split('+')[0] *
               +[...touchingParts][1].split('+')[0]
