@@ -2,8 +2,8 @@ import { readInputFromFile } from '../../utils/io';
 
 export function part1(input?: string[]) {
   const lines = input ?? readInputFromFile(__dirname);
-  let seeds: number[];
-  var almanac: any = {};
+  let seeds: number[] = [];
+  var almanac: { [key: string]: number[][] } = {};
   var almanacKey: string[][] = [];
   var next = false;
   var description: string;
@@ -41,6 +41,8 @@ export function part1(input?: string[]) {
   });
   function findDest(val: number, cat: string) {
     const found = almanacKey.find((e) => e[0] == cat);
+    if (found === undefined)
+      throw new TypeError(`No key was found containing ${cat}!`);
     const map = `${found[0]}-to-${found[1]}`;
     const range = almanac[map].find((e) => {
       const [dest, source, length] = e;

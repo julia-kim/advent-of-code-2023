@@ -9,13 +9,13 @@ export function part2(input?: string[]) {
   engineSchematic.forEach((row, y) => {
     const regex = /(\d+)/g;
     var match = regex.exec(row);
-    while (match != null) {
+    while (match !== null) {
       const range = Array.from(
         { length: match[0].length },
-        (_, i) => i + match.index
+        (_, i) => i + match!.index
       ).map((x) => {
         const point = new Point(x, -y);
-        numbers.set(JSON.stringify(point), match[0] + '+' + match.index + y);
+        numbers.set(JSON.stringify(point), match![0] + '+' + match!.index + y);
       });
       match = regex.exec(row);
     }
