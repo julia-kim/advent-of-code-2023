@@ -11,8 +11,10 @@ export function part1(input?: string[]) {
       .map((numbers) => {
         return numbers.split(/\s+/).map((x) => +x);
       });
-    let matches = playableNumbers.filter((number) => winningNumbers.includes(number));
-    if (matches.length > 0) return Math.pow(2, matches.length - 1)
+    let matches = playableNumbers.filter((number) =>
+      winningNumbers.includes(number)
+    );
+    if (matches.length > 0) return Math.pow(2, matches.length - 1);
     else return 0;
   });
   return sum(scratchcards);
