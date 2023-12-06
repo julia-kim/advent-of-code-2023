@@ -1,5 +1,5 @@
-import { part1 } from './part1';
-import { part2 } from './part2';
+import { part1 } from '../days/XX/part1';
+import { part2 } from '../days/XX/part2';
 
 describe('day XX - part 1', () => {
   it('does the thing', () => {
