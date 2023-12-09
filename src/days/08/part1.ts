@@ -14,7 +14,6 @@ export function part1(input?: string[]) {
   while (element != 'ZZZ') {
     [...instructions].forEach(relativeDir => {
       const lookup = network[element]
-    
       if (relativeDir == 'L') { element = lookup[0]; steps++ }
       if (relativeDir == 'R') { element = lookup[1]; steps++ }
     })
