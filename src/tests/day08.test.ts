@@ -2,7 +2,7 @@ import { part1 } from '../days/08/part1';
 import { part2 } from '../days/08/part2';
 
 describe('day 08 - part 1', () => {
-  it('does the thing', () => {
+  it('finds number of steps required to reach ZZZ', () => {
     const input = [
       'RL',
       '',
@@ -20,7 +20,7 @@ describe('day 08 - part 1', () => {
 });
 
 describe('day 08 - part 2', () => {
-  it('does the other thing', () => {
+  it('finds number of steps required to simultaneously reach nodes ending in Z', () => {
     const input = [
       'LR',
       '',
